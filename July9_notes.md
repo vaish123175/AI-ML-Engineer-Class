@@ -49,25 +49,25 @@ Used to retrieve data from a table.
 
 ---
 
-# DISTINCT
+## DISTINCT
 
 Used to retrieve unique values and remove duplicates.
 
 ---
 
-# WHERE Clause
+## WHERE Clause
 
 Used to filter rows based on conditions.
 
 ---
 
-# COUNT()
+## COUNT()
 
 Used to count rows.
 
 ---
 
-# LIMIT
+## LIMIT
 
 Restricts the number of rows returned.
 
@@ -97,7 +97,7 @@ Used to sort records.
 
 ---
 
-# NOT Operator
+## NOT Operator
 
 Used to return the opposite of a condition.
 != is not operator
@@ -132,19 +132,19 @@ Represents exactly one character.
 
 ---
 
-# NULL Values
+## NULL Values
 
 Used to represent missing or unknown data.
 
 ---
 
-# BETWEEN Operator
+## BETWEEN Operator
 
 Used to filter values within a range.
 
 ---
 
-# GROUP BY
+## GROUP BY
 
 Used to group rows that have the same values into summary rows.
 
@@ -159,7 +159,7 @@ Used to group rows that have the same values into summary rows.
 
 ---
 
-# HAVING Clause
+## HAVING Clause
 
 Used to filter grouped (aggregated) data.
 
@@ -170,7 +170,7 @@ Used to filter grouped (aggregated) data.
 
 ---
 
-# WHERE vs HAVING
+## WHERE vs HAVING
 
 | WHERE | HAVING |
 |---------|---------|
@@ -180,7 +180,7 @@ Used to filter grouped (aggregated) data.
 
 ---
 
-# SQL Order of Execution
+## SQL Order of Execution
 
 SQL executes clauses in the following order:
 
@@ -196,13 +196,13 @@ FROM
 
 ---
 
-# Aliasing
+## Aliasing
 
 Aliases provide temporary names for columns or tables.
 
 ---
 
-# Quick Revision
+## Quick Revision
 
 - `SELECT` → Retrieve data
 - `DISTINCT` → Remove duplicates
