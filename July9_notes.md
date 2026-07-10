@@ -17,17 +17,9 @@ TRUNCATE TABLE employees;
 - Can be used with a `WHERE` clause to delete specific rows.
 - Table structure remains intact.
 
-```sql
-DELETE FROM employees
-WHERE employee_id = 101;
-```
 
 ### DROP
 - Completely removes the table and its structure from the database.
-
-```sql
-DROP TABLE employees;
-```
 
 ---
 
@@ -40,26 +32,12 @@ DROP TABLE employees;
 - A table can have only **one Primary Key constraint**.
 - The Primary Key may consist of one or multiple columns (composite key).
 
-```sql
-CREATE TABLE customers (
-    customer_id INT PRIMARY KEY,
-    customer_name VARCHAR(100)
-);
-```
 
 ## Foreign Key
 - Creates a relationship between two tables.
 - References the Primary Key of another table.
 - A table can have multiple Foreign Keys.
 
-```sql
-CREATE TABLE orders (
-    order_id INT PRIMARY KEY,
-    customer_id INT,
-    FOREIGN KEY (customer_id)
-    REFERENCES customers(customer_id)
-);
-```
 
 ---
 
@@ -69,27 +47,11 @@ CREATE TABLE orders (
 
 Used to retrieve data from a table.
 
-```sql
-SELECT * FROM employees;
-```
-
-### Retrieve Specific Columns
-
-```sql
-SELECT employee_name, salary
-FROM employees;
-```
-
 ---
 
 # DISTINCT
 
 Used to retrieve unique values and remove duplicates.
-
-```sql
-SELECT DISTINCT department
-FROM employees;
-```
 
 ---
 
@@ -97,34 +59,17 @@ FROM employees;
 
 Used to filter rows based on conditions.
 
-```sql
-SELECT *
-FROM employees
-WHERE salary > 50000;
-```
-
 ---
 
 # COUNT()
 
 Used to count rows.
 
-```sql
-SELECT COUNT(*)
-FROM employees;
-```
-
 ---
 
 # LIMIT
 
 Restricts the number of rows returned.
-
-```sql
-SELECT *
-FROM employees
-LIMIT 5;
-```
 
 ---
 
@@ -134,23 +79,9 @@ LIMIT 5;
 
 Returns rows only when all conditions are true.
 
-```sql
-SELECT *
-FROM employees
-WHERE department = 'IT'
-AND salary > 50000;
-```
-
 ## OR
 
 Returns rows when at least one condition is true.
-
-```sql
-SELECT *
-FROM employees
-WHERE department = 'IT'
-OR department = 'HR';
-```
 
 ---
 
@@ -162,39 +93,14 @@ Used to sort records.
 
 ### Ascending Order (Default)
 
-```sql
-SELECT *
-FROM employees
-ORDER BY salary;
-```
-
 ### Descending Order
-
-```sql
-SELECT *
-FROM employees
-ORDER BY salary DESC;
-```
 
 ---
 
 # NOT Operator
 
 Used to return the opposite of a condition.
-
-```sql
-SELECT *
-FROM employees
-WHERE NOT department = 'IT';
-```
-
-or
-
-```sql
-SELECT *
-FROM employees
-WHERE department != 'IT';
-```
+!= is not operator
 
 ---
 
@@ -208,37 +114,21 @@ Represents zero or more characters.
 
 ### Contains
 
-```sql
-SELECT *
-FROM employees
-WHERE employee_name LIKE '%john%';
-```
+'%john%'
 
 ### Starts With
 
-```sql
-SELECT *
-FROM employees
-WHERE employee_name LIKE 'john%';
-```
+'john%'
 
 ### Ends With
 
-```sql
-SELECT *
-FROM employees
-WHERE employee_name LIKE '%john';
-```
+'%john'
 
 ## `_` Wildcard
 
 Represents exactly one character.
 
-```sql
-SELECT *
-FROM employees
-WHERE employee_name LIKE '_ohn';
-```
+'_ohn'
 
 ---
 
@@ -246,42 +136,17 @@ WHERE employee_name LIKE '_ohn';
 
 Used to represent missing or unknown data.
 
-```sql
-SELECT *
-FROM employees
-WHERE manager_id IS NULL;
-```
-
-```sql
-SELECT *
-FROM employees
-WHERE manager_id IS NOT NULL;
-```
-
 ---
 
 # BETWEEN Operator
 
 Used to filter values within a range.
 
-```sql
-SELECT *
-FROM employees
-WHERE salary BETWEEN 30000 AND 60000;
-```
-
 ---
 
 # GROUP BY
 
 Used to group rows that have the same values into summary rows.
-
-```sql
-SELECT department,
-       COUNT(*) AS total_employees
-FROM employees
-GROUP BY department;
-```
 
 ### Important Notes
 - Used with aggregate functions such as:
@@ -298,14 +163,6 @@ GROUP BY department;
 
 Used to filter grouped (aggregated) data.
 
-```sql
-SELECT department,
-       COUNT(*) AS total_employees
-FROM employees
-GROUP BY department
-HAVING COUNT(*) > 5;
-```
-
 ### Important Notes
 - `HAVING` is generally used with `GROUP BY`.
 - `GROUP BY` can be used without `HAVING`.
@@ -320,17 +177,6 @@ HAVING COUNT(*) > 5;
 | Filters rows before grouping | Filters groups after grouping |
 | Works on individual rows | Works on aggregated data |
 | Used before GROUP BY | Used after GROUP BY |
-
-Example:
-
-```sql
-SELECT department,
-       COUNT(*) AS total_employees
-FROM employees
-WHERE salary > 30000
-GROUP BY department
-HAVING COUNT(*) > 5;
-```
 
 ---
 
@@ -353,23 +199,6 @@ FROM
 # Aliasing
 
 Aliases provide temporary names for columns or tables.
-
-```sql
-SELECT department,
-       COUNT(*) AS total_employees
-FROM employees
-GROUP BY department;
-```
-
-Aliases can also be used in `HAVING` in some SQL dialects:
-
-```sql
-SELECT department,
-       COUNT(*) AS total_employees
-FROM employees
-GROUP BY department
-HAVING total_employees > 5;
-```
 
 ---
 
