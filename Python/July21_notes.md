@@ -262,12 +262,3 @@ Creates a completely independent copy of an object, including all nested objects
 
 ---
 
-# Loops
-
-### For Loop
-
-A loop used to iterate over a sequence of items and execute a block of code for each item.
-
-### While Loop
-
-A loop that repeatedly executes a block of code as long as a specified condition remains true.
